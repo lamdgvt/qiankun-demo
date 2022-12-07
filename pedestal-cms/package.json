@@ -10,7 +10,8 @@
 		"build:dev": "vue-tsc --noEmit --skipLibCheck && vite build --mode=development",
 		"build:prod": "vue-tsc --noEmit --skipLibCheck && vite build",
 		"build:stag": "vue-tsc --noEmit --skipLibCheck && vite build --mode=staging",
-		"deploy:stag": "deploy-cli-service deploy --mode stag"
+		"deploy:stag": "deploy-cli-service deploy --mode stag",
+		"deploy:prod": "deploy-cli-service deploy --mode prod"
 	},
 	"dependencies": {
 		"@wangeditor/editor": "^5.1.1",

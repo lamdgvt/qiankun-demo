@@ -3,12 +3,13 @@
 	"version": "0.0.0",
 	"scripts": {
 		"dev": "vite",
-		"build:prod": "vue-tsc --noEmit --skipLibCheck && vite build",
+		"build:prod": "vite build",
 		"build:test": "vue-tsc --noEmit --skipLibCheck && vite build --mode=testing",
 		"build:stag": "vue-tsc --noEmit --skipLibCheck && vite build --mode=staging",
 		"build:dev": "vue-tsc --noEmit && vite build --mode=development",
 		"deploy:stag": "deploy-cli-service deploy --mode stag",
 		"deploy:test": "deploy-cli-service deploy --mode test",
+		"deploy:prod": "deploy-cli-service deploy --mode prod",
 		"serve": "vite",
 		"preview": "vite preview",
 		"prettier": "prettier --write ."

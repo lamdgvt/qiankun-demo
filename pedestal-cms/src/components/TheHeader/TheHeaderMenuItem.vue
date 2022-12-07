@@ -47,6 +47,8 @@ withDefaults(defineProps<{ menuList?: any[] }>(), {
 	menuList: () => [],
 });
 
-const menuItemClick = (item: AnyObject) =>
+const menuItemClick = (item: AnyObject) => {
+	console.log(item)
 	router.push({ path: `/${item.modulePath}/${item.menuPath}` });
+};
 </script>

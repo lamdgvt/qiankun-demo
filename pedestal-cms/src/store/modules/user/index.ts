@@ -15,6 +15,8 @@ const state: UserStore = {
 			id: 'vue3',
 			menuVisible: 1,
 			menuName: 'vue3',
+			modulePath: 'vue3',
+			menuPath: 'home',
 		},
 	],
 	btnPermList: [],

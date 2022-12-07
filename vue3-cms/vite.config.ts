@@ -16,6 +16,7 @@ export default ({ mode }: ConfigEnv) => {
 	const Port = env.VITE_APP_PUBLIC_PORT;
 	const Url = env.VITE_APP_PUBLIC_URL;
 	const serviceName = env.VITE_SERVICE_NAME;
+	const isDev = env.VITE_NODE_ENV === 'development';
 
 	const alias = {
 		'@': resolve(__dirname, 'src'),
@@ -24,7 +25,7 @@ export default ({ mode }: ConfigEnv) => {
 	const proxy = {};
 
 	return defineConfig({
-		base: Url,
+		base: isDev ? Url : env.VITE_APP_NEW_WINDOW,
 		plugins: [
 			vue({ reactivityTransform: [/src/] }),
 			vueJsx(),
