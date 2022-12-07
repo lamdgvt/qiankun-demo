@@ -1,0 +1,49 @@
+{
+	// vscode默认启用了根据文件类型自动设置tabsize的选项
+	"editor.detectIndentation": false,
+	// 重新设定tabsize
+	"editor.tabSize": 4,
+	// #值设置为true时，每次保存的时候自动格式化；值设置为false时，代码格式化请按shift+alt+F
+	"editor.formatOnSave": true,
+	// 添加 vue 支持
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		{
+			"language": "vue",
+			"autoFix": true
+		}
+	],
+	"javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+	"files.autoSave": "off",
+	"explorer.confirmDelete": false,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"editor.suggestSelection": "first",
+	// "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"[javascript]": {
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	},
+	"[less]": {
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"i18n-ally.localesPaths": ["src/i18n", "src/i18n/languages"]
+}

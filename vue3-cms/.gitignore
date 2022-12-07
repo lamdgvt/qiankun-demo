@@ -1,0 +1,8 @@
+
+node_modules
+.DS_Store
+*.local
+debug.log
+.idea
+dist
+deploy.config.js
