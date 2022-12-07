@@ -1,28 +1,39 @@
 <template>
-	<SubMenu
-		v-for="(team) in menuList.filter((list: any)=> list.menuVisible)"
+	<div
+		v-for="(team) in menuList?.filter((list: any)=> list.menuVisible)"
 		:key="team.id"
 	>
-		<template #title>
+		<SubMenu v-if="team.menuInfoList">
+			<template #title>
+				<span>
+					<component :is="Icons[team.menuIcon]" />
+					<span>{{ team.menuName }}</span>
+				</span>
+			</template>
+			<menu-item
+				v-for="(item) in team.menuInfoList?.filter((list: any)=> list.menuVisible)"
+				:key="item.id"
+				@click="() => menuItemClick(item)"
+			>
+				<TheHeaderMenuItem v-if="item.menuInfoList" />
+				<span>
+					<component :is="Icons[item.menuIcon]" />
+					<span :style="{ marginLeft: '10px' }">
+						{{ item.menuName }}
+					</span>
+				</span>
+			</menu-item>
+		</SubMenu>
+		<menu-item v-else @click="() => menuItemClick(team)">
+			<TheHeaderMenuItem v-if="team.menuInfoList" />
 			<span>
 				<component :is="Icons[team.menuIcon]" />
-				<span>{{ team.menuName }}</span>
-			</span>
-		</template>
-		<menu-item
-			v-for="(item) in team.menuInfoList.filter((list: any)=> list.menuVisible)"
-			:key="item.id"
-			@click="() => menuItemClick(item)"
-		>
-			<TheHeaderMenuItem v-if="item.menuInfoList" />
-			<span>
-				<component :is="Icons[item.menuIcon]" />
 				<span :style="{ marginLeft: '10px' }">
-					{{ item.menuName }}
+					{{ team.menuName }}
 				</span>
 			</span>
 		</menu-item>
-	</SubMenu>
+	</div>
 </template>
 
 <script lang="ts" setup>

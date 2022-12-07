@@ -10,7 +10,13 @@ const state: UserStore = {
 	gender: 0,
 	headPath: '',
 	phone: '',
-	menuInfoVoList: [],
+	menuInfoVoList: [
+		{
+			id: 'vue3',
+			menuVisible: 1,
+			menuName: 'vue3',
+		},
+	],
 	btnPermList: [],
 	userId: 0,
 };
