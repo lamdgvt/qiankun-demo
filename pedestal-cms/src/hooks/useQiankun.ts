@@ -56,8 +56,6 @@ export default function useQiankun() {
 		val => {
 			const { path: pathVal } = val;
 
-			pathVal.split('/');
-
 			const [, application, path] = pathVal.split('/');
 
 			commonStore.setState({

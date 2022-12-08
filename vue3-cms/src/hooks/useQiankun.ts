@@ -1,5 +1,5 @@
 import { reactive, watch } from 'vue';
-import { QiankunProps, qiankunWindow } from 'vite-plugin-qiankun/dist/helper';
+import { QiankunProps } from 'vite-plugin-qiankun/dist/helper';
 import { router } from '@/router/index';
 import { useCommonStore, useUserStore, useHeadersStore } from '@/store';
 import * as user from '@/store/modules/user';
@@ -49,23 +49,21 @@ export default function useQiankun(props: QiankunProps) {
 		commonStore.setState(commonStateParams || {});
 	}, true);
 
-	if (qiankunWindow.__POWERED_BY_QIANKUN__) {
-		watch(
-			() => commonStore,
-			(val: any) => {
-				const { application, path } = val;
+	watch(
+		() => commonStore,
+		(val: any) => {
+			const { application, path } = val;
 
-				if (application === import.meta.env.VITE_SERVICE_NAME && path)
-					router.push({
-						path,
-					});
-			},
-			{
-				deep: true,
-				immediate: true,
-			},
-		);
-	}
+			if (application === import.meta.env.VITE_SERVICE_NAME && path)
+				router.push({
+					path,
+				});
+		},
+		{
+			deep: true,
+			immediate: true,
+		},
+	);
 
 	return {
 		globalValues,
